@@ -1,3 +1,21 @@
+/**
+
+  _____                      _              _ _ _     _   _     _        __ _ _      
+ |  __ \                    | |            | (_) |   | | | |   (_)      / _(_) |     
+ | |  | | ___    _ __   ___ | |_    ___  __| |_| |_  | |_| |__  _ ___  | |_ _| | ___ 
+ | |  | |/ _ \  | '_ \ / _ \| __|  / _ \/ _` | | __| | __| '_ \| / __| |  _| | |/ _ \
+ | |__| | (_) | | | | | (_) | |_  |  __/ (_| | | |_  | |_| | | | \__ \ | | | | |  __/
+ |_____/ \___/  |_| |_|\___/ \__|  \___|\__,_|_|\__|  \__|_| |_|_|___/ |_| |_|_|\___|
+                                                                                     
+                                                                                   
+ *  DO NOT EDIT HIS FILE!!
+ * 
+ *  FOR CUSTOMIZE FILM API PLEASE EDIT db/Manage_Film_Example/custom/FilmCustom.js
+ * 
+ *  -- THIS FILE WILL BE OVERWRITTEN ON THE NEXT EASYDEV'S CODE GENERATION --
+ * 
+ */
+
 const app = require('../../app.js');
 const db_Manage_Film_Example_db = require('../../db/Manage_Film_Example_db_schema.js')
 const properties = require('../../properties.js');
