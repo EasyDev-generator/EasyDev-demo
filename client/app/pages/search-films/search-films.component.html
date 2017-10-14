@@ -2,8 +2,8 @@
 <!-- TITLE -->
 <mat-card class="mb-40">
     <h1>
-        <mat-icon class="ico-lg">home</mat-icon>
-        Home
+        <mat-icon class="ico-lg">search</mat-icon>
+        Search
     </h1>
 </mat-card>
     
@@ -11,21 +11,34 @@
 <mat-card>
     <mat-card-content>
 
-<!-- START LINKS -->
-<div>
-    <a routerLink="/actors" routerLinkActive="active">Link to List Actor</a>
-</div>
+        <!-- TITLE SEARCH -->
+        <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Title" [(ngModel)]="title"  name="title" id="title">
+        </mat-form-field>
 
-<div>
-    <a routerLink="/films" routerLinkActive="active">Link to List Film</a>
-</div>
+        <!-- GENRE SEARCH -->
+        <mat-form-field class="full-width">
+            <mat-select placeholder="Genre" class="full-width" [(ngModel)]="genre" name="genre" id="genre">
+                <mat-option></mat-option>
+                <mat-option value="Action">Action</mat-option>
+                <mat-option value="Crime">Crime</mat-option>
+                <mat-option value="Fantasy">Fantasy</mat-option>
+                <mat-option value="Horror">Horror</mat-option>
+            <div class="clearfix"></div>
+            </mat-select>
+        </mat-form-field>
 
-<div>
-    <a routerLink="/filmmakers" routerLinkActive="active">Link to List FilmMaker</a>
-</div>
-
-
-<!-- END LINKS -->
+        <!-- SEARCH BUTTON -->
+        <button mat-raised-button color="primary" (click)="search()">SEARCH</button>
     </mat-card-content>
 
+</mat-card>
+
+
+<mat-card>
+    <mat-card-content>
+        <div *ngFor="let film of filmList">
+            <a [routerLink] = "['/film', film._id]">{{film.title}}</a>
+        </div>
+    </mat-card-content>
 </mat-card>

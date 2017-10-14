@@ -25,4 +25,29 @@ export class FilmService extends FilmBaseService {
     constructor(http: Http, authenticationService: AuthenticationService) {
             super(http, authenticationService);
     }
+
+    /*
+    Name: search
+    Description: Method for search films
+    Params: 
+        title - String
+        genre - String
+    */
+    search(title?:any, genre?:any): Observable<any> {
+
+        // SET QUERY PARAMS
+        let params: URLSearchParams = new URLSearchParams();
+        
+        if (title)
+            params.set('title', title);
+        
+        if(genre)
+            params.set('genre', genre);
+        
+        // CALL API
+        return this.http
+            .get(this.contextUrl + "/search?" + params.toString())
+            .map(response => response.json());
+    }
+
 }

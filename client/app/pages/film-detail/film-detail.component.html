@@ -2,30 +2,41 @@
 <!-- TITLE -->
 <mat-card class="mb-40">
     <h1>
-        <mat-icon class="ico-lg">home</mat-icon>
-        Home
+        Film Detail
     </h1>
 </mat-card>
     
 
-<mat-card>
+<mat-card *ngIf="film">
     <mat-card-content>
 
-<!-- START LINKS -->
-<div>
-    <a routerLink="/actors" routerLinkActive="active">Link to List Actor</a>
-</div>
+        <h2>Film</h2>
 
-<div>
-    <a routerLink="/films" routerLinkActive="active">Link to List Film</a>
-</div>
+        <div>
+            <label>Title</label>
+            {{film.title}}
+        </div>
 
-<div>
-    <a routerLink="/filmmakers" routerLinkActive="active">Link to List FilmMaker</a>
-</div>
+        <div>
+            <label>Genre</label>
+            {{film.genre}}
+        </div>
 
+        <div>
+            <label>Year</label>
+            {{film.year}}
+        </div>
 
-<!-- END LINKS -->
+        <div>
+            <label>Film maker</label>
+            {{film.filmMaker.name}} {{film.filmMaker.surname}}
+        </div>
+
+        <h3>Cast</h3>
+
+        <div *ngFor="let actor of cast">
+            {{actor.name}} {{actor.surname}}
+        </div>
+        
     </mat-card-content>
-
 </mat-card>

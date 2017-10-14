@@ -17,7 +17,7 @@ app.all(properties.api + '/*', function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "X-Requested-With,Content-Type,user,pass,token");
 
     // Get roles authorized for called URL
-    var roles = findRoleMapping(req.method + ' - ' + req.url.toLowerCase());
+    var roles = findRoleMapping(req.method + ' - ' + req.path.toLowerCase());
 
     // If is a public page
     if (!roles) {

@@ -72,8 +72,8 @@ export class FilmBaseService {
 
     contextUrl:string = config.host + "/film";
     constructor(
-        private http: Http,
-        private authenticationService: AuthenticationService) {
+        protected http: Http,
+        protected authenticationService: AuthenticationService) {
         
     }
 
@@ -140,18 +140,26 @@ export class FilmBaseService {
             .map(response => response.json())
     }
 
-
+    /**
+     * Get cast
+     */
+	getCast(id: string): Observable<any[]> {
+        return this.http
+            .get(this.contextUrl + '/' + id + '/getcast')
+            .map(response => response.json())
+    }
 
 
     /*
     Name: search
-    Description: 
+    Description: Method for search films
     Params: 
+        title - String
+        genre - String
     */
-    
-    search(): any {
+    search(): Observable<any> {
         return this.http
-            .get(this.contextUrl)
+            .get(this.contextUrl + "/search")
             .map(response => response.json());
     }
 		
